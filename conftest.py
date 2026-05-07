@@ -29,8 +29,9 @@ def pytest_runtest_makereport(item, call):
 @pytest.fixture
 def driver():
     options = Options()
+    options.add_argument("--incognito")
     if os.getenv("CI", "").lower() == "true":
-        options.add_argument("--headless")
+        options.add_argument("--headless=new")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
 

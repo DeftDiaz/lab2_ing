@@ -1,16 +1,4 @@
-import pytest
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from login_page import LoginPage
-
-
-@pytest.fixture
-def driver():
-    options = Options()
-    options.add_argument("--incognito")
-    driver = webdriver.Chrome(options=options)
-    yield driver
-    driver.quit()
 
 
 def test_login_fallido(driver):
